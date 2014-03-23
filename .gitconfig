@@ -1,0 +1,23 @@
+[alias]
+	st = status
+	rpull = rebase --merge
+	br = branch
+	ch = checkout
+	reb = rebase
+	res = reset
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+
+[push]
+	default = simple
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = auto
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
