@@ -10,6 +10,9 @@
 [push]
 	default = simple
 
+[remote "origin"]
+	fetch = +refs/pull/*/head:refs/pull/origin/*
+
 [color]
     diff = auto
     status = auto
