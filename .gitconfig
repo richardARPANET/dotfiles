@@ -1,3 +1,7 @@
+[user]
+	name = Richard O'Dwyer
+	email = richard.odwyer@hogarthww.com
+
 [alias]
 	st = status
 	rpull = rebase --merge
@@ -8,7 +12,7 @@
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 
 [push]
-	default = simple
+	default = current
 
 [remote "origin"]
 	fetch = +refs/pull/*/head:refs/pull/origin/*
@@ -24,3 +28,12 @@
   current = yellow reverse
   local = yellow
   remote = green
+
+[core]
+	editor = nano
+	excludesfile = ~/.gitignore
+[merge]
+	tool = diffmerge
+[mergetool "diffmerge"]
+	cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
+	trustExitCode = true
