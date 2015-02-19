@@ -1,31 +1,35 @@
 [user]
-	name = Richard O'Dwyer
-	email = richard@richard.do
+    name = Richard O'Dwyer
+    email = richard@richard.do
 
 [alias]
-	st = status
-	rpull = rebase --merge
-	br = branch
-	ch = checkout
-	reb = rebase
-	res = reset
-	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    st = status
+    rpull = rebase --merge
+    br = branch
+    ch = checkout
+    ci = commit
+    df = diff
+    lg = log -p
+    co = checkout
+    reb = rebase
+    res = reset
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
 
 [rerere]
     enabled = true
 
 [push]
-	default = current
+    default = current
 
 [remote "origin"]
-	fetch = +refs/pull/*/head:refs/pull/origin/*
+    fetch = +refs/pull/*/head:refs/pull/origin/*
 
 [color]
     diff = auto
     status = auto
     branch = auto
     interactive = auto
-    ui = auto
+    ui = true
 
 [color "branch"]
   current = yellow reverse
@@ -33,10 +37,18 @@
   remote = green
 
 [core]
-	editor = nano
-	excludesfile = ~/.gitignore
+    editor = nano
+    excludesfile = ~/.gitignore
 [merge]
-	tool = diffmerge
-[mergetool "diffmerge"]
-	cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
-	trustExitCode = true
+    tool = Kaleidoscope
+
+[diff]
+    tool = Kaleidoscope
+
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
+  keepBackup = false
