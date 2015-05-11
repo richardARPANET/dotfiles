@@ -7,16 +7,10 @@
     rpull = rebase --merge
     br = branch
     ch = checkout
-    ci = commit
-    df = diff
-    lg = log -p
-    co = checkout
     reb = rebase
     res = reset
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
-
-[rerere]
-    enabled = true
+        showtool = "!showci () { rev=${1:-HEAD}; git difftool --dir-diff $rev~1 $rev; }; showci $1"
 
 [push]
     default = current
@@ -29,26 +23,26 @@
     status = auto
     branch = auto
     interactive = auto
-    ui = true
+    ui = auto
 
 [color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+    current = yellow reverse
+    local = yellow
+    remote = green
 
 [core]
     editor = nano
     excludesfile = ~/.gitignore
+
 [merge]
-    tool = Kaleidoscope
+    tool = araxis
 
 [diff]
-    tool = Kaleidoscope
+    tool = araxis
 
-[difftool "Kaleidoscope"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool "araxis"]
+    path = "/Applications/Araxis Merge.app/Contents/Utilities/compare"
 
-[mergetool "Kaleidoscope"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-  trustExitCode = true
-  keepBackup = false
+[mergetool "araxis"]
+    trustExitCode = true
+    keepBackup = false
