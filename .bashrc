@@ -4,7 +4,7 @@ function do_isort () {
         do
                 if [[ $file =~ \.py$ ]]
                 then
-                        isort $file -a "from __future__ import absolute_import"$
+                        isort $file -a "from __future__ import absolute_import"
                         echo 'isorted: ' $file
                 fi
         done
