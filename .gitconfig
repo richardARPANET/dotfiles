@@ -44,5 +44,6 @@
     path = "/Applications/Araxis Merge.app/Contents/Utilities/compare"
 
 [mergetool "araxis"]
+    path = "/Applications/Araxis Merge.app/Contents/Utilities/compare"
     trustExitCode = true
     keepBackup = false
