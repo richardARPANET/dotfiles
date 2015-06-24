@@ -43,7 +43,7 @@ end
 
 set -x WORKON_HOME $HOME/.virtualenvs
 set -x PROJECT_HOME $HOME/dev
-
+set -x PYTHONDONTWRITEBYTECODE true
 set -U fish_user_abbreviations 'g=git' 'v=vagrant'
 
 source ~/.config/fish/completions/git.fish
