@@ -25,6 +25,9 @@ function parse_virtualenv_name
 
 end
 
+function new
+  eval "~/dev/new/new"
+end
 
 function fish_prompt
   set -l git_dir (git rev-parse --git-dir 2> /dev/null)
