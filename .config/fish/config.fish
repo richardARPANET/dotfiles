@@ -26,7 +26,7 @@ function parse_virtualenv_name
 end
 
 function new
-  eval "~/dev/new/new"
+  eval ~/dev/new/new $argv
 end
 
 function fish_prompt
