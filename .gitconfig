@@ -35,15 +35,15 @@
     excludesfile = ~/.gitignore
 
 [merge]
-    tool = araxis
+    tool = meld
 
 [diff]
-    tool = araxis
+    tool = meld
 
-[difftool "araxis"]
-    path = "/Applications/Araxis Merge.app/Contents/Utilities/compare"
+[difftool "meld"]
+    path = "/Applications/Meld.app/Contents/MacOS/Meld-bin"
 
-[mergetool "araxis"]
-    path = "/Applications/Araxis Merge.app/Contents/Utilities/compare"
+[mergetool "meld"]
+    path = "/Applications/Meld.app/Contents/MacOS/Meld-bin"
     trustExitCode = true
     keepBackup = false
