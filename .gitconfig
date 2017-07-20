@@ -5,6 +5,7 @@
 [alias]
     st = status
     rpull = rebase --merge
+    fuck = !git add . && git commit --amend --no-edit
     br = branch
     ch = checkout
     reb = rebase
