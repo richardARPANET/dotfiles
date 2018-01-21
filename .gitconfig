@@ -5,7 +5,8 @@
 [alias]
     st = status
     rpull = rebase --merge
-    fuck = !git add . && git commit --amend --no-edit
+    ok = !git add . && git commit --amend --no-edit && git push -f
+    cmp = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
     br = branch
     ch = checkout
     reb = rebase
