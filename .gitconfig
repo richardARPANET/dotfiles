@@ -10,13 +10,14 @@
     br = branch
     ch = checkout
     reb = rebase
+    pul = pull
     res = reset
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
         showtool = "!showci () { rev=${1:-HEAD}; git difftool --dir-diff $rev~1 $rev; }; showci $1"
     set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 
 [push]
-    default = current
+	default = current
 
 [remote "origin"]
     fetch = +refs/pull/*/head:refs/pull/origin/*
