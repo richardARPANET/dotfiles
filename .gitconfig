@@ -11,6 +11,7 @@
     ch = checkout
     reb = rebase
     pul = pull
+    pushall = !git remote | xargs -L1 git push --all
     res = reset
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
         showtool = "!showci () { rev=${1:-HEAD}; git difftool --dir-diff $rev~1 $rev; }; showci $1"
@@ -38,16 +39,3 @@
     editor = nano
     excludesfile = ~/.gitignore
 
-[merge]
-    tool = araxis
-
-[diff]
-    tool = araxis
-
-[difftool "araxis"]
-    path = "/Applications/Araxis Merge.app/Contents/Utilities/compare"
-
-[mergetool "araxis"]
-    path = "/Applications/Araxis Merge.app/Contents/Utilities/compare"
-    trustExitCode = true
-    keepBackup = false
