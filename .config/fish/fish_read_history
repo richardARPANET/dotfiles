@@ -1,2 +1,0 @@
-- cmd: function fish_prompt\nset -l git_dir (git rev-parse --git-dir 2> /dev/null)\nif test -n "$git_dir"\nprintf '%s@%s %s%s%s:%s> ' (whoami) (hostname|cut -d . -f 1) (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) (parse_git_branch)\nelse\nprintf '%s@%s %s%s%s> ' (whoami) (hostname|cut -d . -f 1) (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)\nend\nend
-   when: 1432072912

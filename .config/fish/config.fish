@@ -53,3 +53,18 @@ source ~/.config/fish/completions/git.fish
 
 #sudo pip install virtualfish
 eval (python -m virtualfish compat_aliases 2> /dev/null)
+
+
+# Docker commands
+
+function dkill
+  docker kill (docker ps -q)
+end
+
+function dlog
+  docker logs -f (docker ps -q --filter name=$argv)
+end
+
+function drm
+  docker kill (docker ps -q --filter name=$argv)
+end
