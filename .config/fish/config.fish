@@ -62,6 +62,14 @@ function dkill
     docker kill (docker ps -q)
 end
 
+function dps
+    docker ps
+end
+
+function dex
+    docker exec -it $argv /bin/sh
+end
+
 function dkill
     docker kill (docker ps -q)
 end
