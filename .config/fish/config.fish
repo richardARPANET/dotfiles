@@ -90,3 +90,6 @@ end
 function vpnon
     sudo wg-quick up wg0
 end
+
+# RUST
+set -gx PATH "$HOME/.cargo/bin" $PATH
