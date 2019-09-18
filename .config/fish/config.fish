@@ -95,3 +95,5 @@ if test -e .env.fish
     echo ".env.fish found, sourcing..."
     source .env.fish
 end
+# RUST
+set -gx PATH "$HOME/.cargo/bin" $PATH
