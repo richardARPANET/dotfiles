@@ -90,3 +90,8 @@ end
 function vpnon
     sudo wg-quick up wg0
 end
+
+if test -e .env.fish
+    echo ".env.fish found, sourcing..."
+    source .env.fish
+end
