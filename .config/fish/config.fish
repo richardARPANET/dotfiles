@@ -18,6 +18,7 @@ set -x PROJECT_HOME $HOME/dev
 set -x PYTHONDONTWRITEBYTECODE true
 abbr -a -g g git
 abbr -a -g v vagrant
+alias parent="ps -o ppid= -p "
 source ~/.config/fish/completions/git.fish
 
 # PYTHON
