@@ -85,11 +85,11 @@ end
 
 # VPN
 function vpnoff
-    sudo wg-quick down wg0
+    sudo protonvpn-cli -d
 end
 
 function vpnon
-    sudo wg-quick up wg0
+    sudo protonvpn-cli -r
 end
 
 if test -e .env.fish
