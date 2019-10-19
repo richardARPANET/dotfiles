@@ -92,6 +92,13 @@ function vpnon
     sudo protonvpn-cli -r
 end
 
+function ptw
+    pytest $argv
+    while find -name "*.py" | inotifywait -e close_write --fromfile - ;
+        pytest $argv
+    end
+end
+
 if test -e .env.fish
     echo ".env.fish found, sourcing..."
     source .env.fish
