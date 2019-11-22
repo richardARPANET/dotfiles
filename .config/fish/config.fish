@@ -17,7 +17,7 @@ end
 set -x PROJECT_HOME $HOME/dev
 set -x PYTHONDONTWRITEBYTECODE true
 abbr -a -g g git
-abbr -a -g v vagrant
+abbr -a -g d docker
 source ~/.config/fish/completions/git.fish
 
 # PYTHON
@@ -68,6 +68,13 @@ end
 
 function dex
     docker exec -it $argv /bin/sh
+end
+
+function ptw
+    pytest $argv
+    while find -name "*.py" | inotifywait -e close_write --fromfile - ;
+        pytest $argv
+    end
 end
 
 function dkill
