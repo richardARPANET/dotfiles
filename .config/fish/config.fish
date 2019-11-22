@@ -18,6 +18,7 @@ set -x PROJECT_HOME $HOME/dev
 set -x PYTHONDONTWRITEBYTECODE true
 abbr -a -g g git
 abbr -a -g d docker
+alias parent="ps -o ppid= -p "
 source ~/.config/fish/completions/git.fish
 
 # PYTHON
@@ -91,11 +92,18 @@ end
 
 # VPN
 function vpnoff
-    sudo wg-quick down wg0
+    sudo protonvpn-cli -d
 end
 
 function vpnon
-    sudo wg-quick up wg0
+    sudo protonvpn-cli -r
+end
+
+function ptw
+    pytest $argv
+    while find -name "*.py" | inotifywait -e close_write --fromfile - ;
+        pytest $argv
+    end
 end
 
 if test -e .env.fish
