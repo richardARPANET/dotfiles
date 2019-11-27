@@ -19,6 +19,7 @@ set -x PYTHONDONTWRITEBYTECODE true
 abbr -a -g g git
 abbr -a -g d docker
 alias parent="ps -o ppid= -p "
+alias psg="ps aux | grep "
 source ~/.config/fish/completions/git.fish
 
 # PYTHON
