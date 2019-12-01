@@ -88,7 +88,9 @@ function dlog
 end
 
 function drm
-    docker kill (docker ps -q --filter name=$argv)
+    set containers (docker ps -q --filter name=$argv)
+    docker kill $containers
+    docker rm $containers
 end
 
 # VPN
