@@ -19,8 +19,9 @@ set -x PYTHONDONTWRITEBYTECODE true
 abbr -a -g g git
 abbr -a -g d docker
 alias parent="ps -o ppid= -p "
-alias psg="ps aux | grep "
+alias psg="ps -ef | grep "
 source ~/.config/fish/completions/git.fish
+source ~/.config/fish/config_custom.fish
 
 # PYTHON
 function parse_virtualenv_name
@@ -59,6 +60,10 @@ status --is-interactive
 and source (pyenv virtualenv-init -|psub)
 eval (python -m virtualfish compat_aliases 2> /dev/null)
 
+function grepkill
+    kill (ps -ef | grep $argv| awk '{print $2}')
+end
+
 # DOCKER
 function dkill
     docker kill (docker ps -q)
@@ -91,15 +96,6 @@ function drm
     set containers (docker ps -q --filter name=$argv)
     docker kill $containers
     docker rm $containers
-end
-
-# VPN
-function vpnoff
-    sudo protonvpn-cli -d
-end
-
-function vpnon
-    sudo protonvpn-cli -r
 end
 
 function ptw
