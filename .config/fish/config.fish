@@ -15,6 +15,7 @@ end
 
 # GENERAL
 set -x PROJECT_HOME $HOME/dev
+set -x PYTHONBREAKPOINT 'ipdb.set_trace'
 set -x PYTHONDONTWRITEBYTECODE true
 abbr -a -g g git
 abbr -a -g d docker
