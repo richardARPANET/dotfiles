@@ -106,6 +106,10 @@ function ptw
     end
 end
 
+function act
+    pyenv activate $argv
+end
+
 if test -e .env.fish
     echo ".env.fish found, sourcing..."
     source .env.fish
