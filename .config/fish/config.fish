@@ -110,6 +110,10 @@ function act
     pyenv activate $argv
 end
 
+function grepin
+    grep -rnw $argv[1] -e $argv[2]
+end
+
 if test -e .env.fish
     echo ".env.fish found, sourcing..."
     source .env.fish
